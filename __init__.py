@@ -1,7 +1,7 @@
 from .nodes import (
-    image_crop_circle,
+    agenticflow_ai_variable,
 )
 
 NODE_CLASS_MAPPINGS = {
-    **image_crop_circle.NODE_CLASS_MAPPINGS,
+    **agenticflow_ai_variable.NODE_CLASS_MAPPINGS,
 }
