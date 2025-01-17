@@ -305,6 +305,17 @@ def download_file_temp(
     chunk_size_in_mb=16,
     file_integrity_check_callback=None,
 ):
+    """
+    Downloads a file from a URL to a temporary location and yields the path.
+    Automatically cleans up the temporary file after use.
+
+    Args:
+        url (str): The URL to download from
+
+    Yields:
+        str: Path to the temporary downloaded file
+    """
+
     file_name = _parse_filename(url, None)
 
     with tempfile.TemporaryDirectory() as temp_dir:
