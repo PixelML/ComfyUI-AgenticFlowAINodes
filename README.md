@@ -1,4 +1,4 @@
-# AgenticflowAI ComfyUI Nodes
+# PixelML ComfyUI Nodes
 
 A collection of custom nodes for ComfyUI focused on variable handling and workflow automation.
 
