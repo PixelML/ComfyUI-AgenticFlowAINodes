@@ -4,3 +4,4 @@ boto3
 diffusers==0.24.0
 httpx
 httpx-sse
+requests

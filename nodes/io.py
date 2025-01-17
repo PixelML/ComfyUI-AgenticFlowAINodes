@@ -8,7 +8,7 @@ from PIL import Image, ImageOps, ImageSequence
 from PIL.PngImagePlugin import PngInfo
 from comfy.cli_args import args
 import folder_paths
-from utils.download import download_file_temp
+from ..download import download_file_temp
 
 
 class IntegerInput:
