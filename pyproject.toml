@@ -1,0 +1,15 @@
+[project]
+name = "pixelml-customnodes"
+description = "A collection of custom nodes for ComfyUI focused on variable handling and workflow automation."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["diffusers", "tqdm", "boto3", "diffusers==0.24.0", "httpx", "httpx-sse", "requests"]
+
+[project.urls]
+Repository = "https://github.com/PixelML/ComfyUI-PixelML-CustomNodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-PixelML-CustomNodes"
+Icon = ""
