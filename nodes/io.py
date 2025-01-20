@@ -17,18 +17,25 @@ class IntegerInput:
         return {
             "required": {
                 "name": ("STRING", {"default": "int_input"}),
-                "number": ("INT", {"default": 0}),
+                "value": ("STRING", {"default": "0"}),
                 "min": ("INT", {"default": -(2**31)}),
                 "max": ("INT", {"default": 2**31 - 1}),
-                "step": ("INT", {"default": 1}),
             }
         }
 
     RETURN_TYPES = ("INT",)
     FUNCTION = "get_number"
 
-    def get_number(self, name, number, min, max, step):
-        return (number,)
+    def get_number(self, name, value, min, max):
+        try:
+            num = int(value)
+            if num < min:
+                return (min,)
+            if num > max:
+                return (max,)
+        except ValueError:
+            return (0,)
+        return (num,)
 
 
 class FloatInput:
@@ -37,18 +44,25 @@ class FloatInput:
         return {
             "required": {
                 "name": ("STRING", {"default": "float_input"}),
-                "number": ("FLOAT", {"default": 0}),
+                "value": ("STRING", {"default": "0"}),
                 "min": ("FLOAT", {"default": -float(2**31)}),
                 "max": ("FLOAT", {"default": float(2**31)}),
-                "step": ("FLOAT", {"default": 0.1}),
             }
         }
 
     RETURN_TYPES = ("FLOAT",)
     FUNCTION = "get_number"
 
-    def get_number(self, name, number, min, max, step):
-        return (number,)
+    def get_number(self, name, value, min, max):
+        try:
+            num = float(value)
+            if num < min:
+                return (min,)
+            if num > max:
+                return (max,)
+        except ValueError:
+            return (0,)
+        return (num,)
 
 
 class BooleanInput:
